@@ -1,0 +1,139 @@
+@keyframes revolve {
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fade {
+  0% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+@keyframes expand {
+  0% {
+    width: calc(5em);
+    height: calc(5em);
+    margin: calc(-5em / 2) 0 0 calc(-5em / 2);
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+  25% {
+    width: calc(5em + 30px);
+    height: calc(5em + 30px);
+    margin: calc((-5em + -30px) / 2) 0 0 calc((-5em + -30px) / 2);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    width: calc(5em + 60px);
+    height: calc(5em + 60px);
+    margin: calc((-5em + -60px) / 2) 0 0 calc((-5em + -60px) / 2);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  75% {
+    width: calc(5em + 90px);
+    height: calc(5em + 90px);
+    margin: calc((-5em + -90px) / 2) 0 0 calc((-5em + -90px) / 2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    width: calc(5em + 120px);
+    height: calc(5em + 120px);
+    margin: calc((-5em + -120px) / 2) 0 0 calc((-5em + -120px) / 2);
+    border: 1px solid rgba(255, 255, 255, 0);
+  }
+}
+
+.sound-effects {
+  transform: translateY(40px);
+  .circle {
+    width: auto;
+    height: auto;
+    /*   border: 1px solid #999; */
+    border-radius: 50%;
+    animation: 20s revolve linear infinite;
+    animation-play-state: paused;
+    position: relative;
+  }
+  .circle-img {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  img {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+  }
+  .circle-item {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: 4s expand linear infinite;
+    animation-play-state: paused;
+    border: 1px solid #ffffff;
+  }
+  .circle-item:nth-child(2) {
+    animation: 4s expand 1s linear infinite;
+    animation-play-state: paused;
+    transform: rotate(30deg);
+  }
+  .circle-item:nth-child(3) {
+    animation: 4s expand 2s linear infinite;
+    animation-play-state: paused;
+    transform: rotate(180deg);
+  }
+  .circle-item:nth-child(4) {
+    animation: 4s expand 3s linear infinite;
+    animation-play-state: paused;
+    transform: rotate(270deg);
+  }
+  .circle-single {
+    --width: 10px;
+    --half-width: -5px;
+    width: var(--width);
+    height: var(--width);
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% - var(--half-width));
+    top: var(--half-width);
+    animation: 4s fade linear infinite;
+    animation-play-state: paused;
+  }
+  .one {
+    animation: 4s fade 1s linear infinite;
+    animation-play-state: paused;
+  }
+  .two {
+    animation: 4s fade 2s linear infinite;
+    animation-play-state: paused;
+  }
+  .three {
+    animation: 4s fade 3s linear infinite;
+    animation-play-state: paused;
+  }
+}

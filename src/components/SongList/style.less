@@ -1,0 +1,35 @@
+.song-list {
+  margin-top: 50px;
+  padding-bottom: 120px;
+  li {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  i {
+    height: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+.song-list_item {
+  .cover,
+  .details,
+  .player {
+    transition: all 0.5s;
+  }
+
+  .player {
+    transform: translateX(96px);
+  }
+
+  &:hover .cover,
+  &:hover .details {
+    transform: translateX(-96px);
+  }
+
+  &:hover .player {
+    transform: translateX(0px);
+  }
+}

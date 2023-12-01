@@ -1,0 +1,153 @@
+.song-player {
+  position: fixed;
+  left: 0;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .song-player_bar {
+    position: relative;
+    width: 90%;
+    ._oGACf {
+      ._1EWMa {
+        position: relative;
+        // 标题
+        ._wKo5X {
+          margin: 10px 0px 0px 0px;
+        }
+
+        ._2cSIF {
+          position: absolute;
+          left: 0;
+          top: 0;
+          margin: 0px;
+          #myRange::-webkit-slider-thumb {
+            background: transparent;
+          }
+        }
+
+        // 控制栏
+        ._2_1sf {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-bottom: 15px;
+          // 操作
+          ._2FsrM {
+            width: 250px;
+            height: 40px;
+            img {
+              width: 1.5em;
+              height: 1.5em;
+            }
+          }
+          // 音量
+          ._1cpXy {
+            width: 250px;
+            min-height: 40px;
+            ._awgvT {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      ._RZMQZ {
+        position: absolute;
+        bottom: 120px;
+        right: 0;
+        margin: 0;
+        padding: 10px 15px;
+        width: 300px;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+    .song-player_list {
+      position: absolute;
+      top: 18px;
+      right: 190px;
+    }
+    .song-player_cover {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5em;
+      height: 5em;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .cover-download {
+        opacity: 0;
+      }
+
+      &:hover .cover-download {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// 播放列表初始显隐初始状态
+.show-song-list {
+  ._RZMQZ {
+    display: block !important;
+    opacity: 1 !important;
+  }
+}
+// 播放旋转控制
+.song-player_bar:has(._1mI0y) {
+  .cover-img {
+    animation-play-state: running !important;
+  }
+}
+// 玻璃拟态
+._1EWMa,
+._RZMQZ p {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+// 响应式
+@media only screen and (max-width: 850px) {
+  .song-player_cover,
+  .song-player_list {
+    display: none !important;
+  }
+
+  .show-song-list div._RZMQZ {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  ._3q4Ah,
+  ._tAQkw {
+    text-align: center;
+  }
+  ._2FsrM {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  ._2FsrM {
+    margin-top: 10px;
+  }
+}
+
+._1mI0y {
+  overflow: visible;
+}
+// 播放旋转控制
+.song-player_bar:has(._1mI0y) {
+  .circle,
+  .circle-item,
+  .circle-single,
+  .one,
+  .two,
+  .three {
+    animation-play-state: running !important;
+  }
+}
